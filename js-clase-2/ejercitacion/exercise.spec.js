@@ -92,6 +92,7 @@ describe("PUNTO NÚMERO 4", () => {
 		expect(matchingColors("pink")).toEqual(products_with_color_pink);
 	});
 });
+
 describe("PUNTO NÚMERO 5", () => {
 	it("colorsLength debe ser una función", () => {
 		expect(typeof colorsLength).toBe("function");
@@ -173,6 +174,7 @@ describe("PUNTO 9", () => {
 		expect(showHigherPrice(products, 500).length).toBe(2);
 		expect(showHigherPrice(products, 1000).length).toBe(1);
 		expect(showHigherPrice(products, 5000).length).toBe(0);
-		expect(showHigherPrice(products, 50).length).toBe(4);
+		expect(showHigherPrice(products, 50).length).toBe(5);
+		// expect(showHigherPrice(products, 50).length).toBe(4);
 	});
 });
