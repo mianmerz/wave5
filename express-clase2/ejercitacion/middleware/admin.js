@@ -32,7 +32,7 @@ function auth(req, res, next) {
 		else res.status(300).send("Error Auth");
 	}
 	
-	next();
+	// next();
 };
 
 module.exports = { user, auth }

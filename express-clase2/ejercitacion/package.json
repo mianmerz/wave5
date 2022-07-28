@@ -9,7 +9,7 @@
 		"node-mocks-http": "^1.11.0"
 	},
 	"scripts": {
-		"test": "jest --verbose --watchAll --maxWorkers=1 ",
+		"test": "jest --verbose --watchAll ",
 		"dev": "nodemon app.js"
 	}
 }
