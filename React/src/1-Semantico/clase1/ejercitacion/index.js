@@ -59,6 +59,7 @@ function Home() {
 				<a href='https://github.com/mianmerz' target="_blanck">
 					Github </a>
 			</footer>
+
 		</>
 	);
 }

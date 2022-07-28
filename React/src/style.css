@@ -8,13 +8,14 @@
 
 body {
     margin: 0;
-padding: 0 50px;
+    padding: 0 50px;
     font-family: 'Roboto', sans-serif;
     background: white;
     color: #212529;
 }
 
 .menu {
+    position: relative;
     height: 80px;
     display: flex;
     justify-content: center;
@@ -43,7 +44,7 @@ padding: 0 50px;
     text-align: center;
 }
 
-.profile article .top{
+.profile article .top {
     display: flex;
     justify-content: center;
 }
@@ -53,18 +54,18 @@ padding: 0 50px;
     overflow: hidden;
     max-width: 200px;
     max-height: 200px;
-    
+
 }
 
-.profile .avatar img{
+.profile .avatar img {
     width: 100%;
     object-fit: cover;
 }
 
-.profile .bottom{
+.profile .bottom {
     width: 100%;
-   display: flex;
-   justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 
 .profile .description {
@@ -75,10 +76,11 @@ padding: 0 50px;
     max-width: 500px;
 }
 
-footer{
-    position: fixed;
+footer {
+    position: absolute;
     bottom: 0;
-    width: 100%;
+    left: 50px;
+    width: calc(100% - 100px);
     height: 80px;
     display: flex;
     justify-content: center;
@@ -86,7 +88,7 @@ footer{
     border-top: 1px solid #e1e6eb;
 }
 
-footer a{
+footer a {
     color: #212529;
     text-decoration: none;
 }
