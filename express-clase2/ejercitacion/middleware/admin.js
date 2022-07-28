@@ -11,15 +11,28 @@ que es res.locals? : https://www.geeksforgeeks.org/express-js-res-locals-propert
  */
 
 function user(req, res, next) {
+	if (req.body) {
+		let { id, name, admin } = req.body;
 
-		next()
-	
+		res.locals.user = { id, name, admin }
+	}
+
+	next();
 };
 
+/**
+ * Retorna string si el usuario tiene rol administrador:
+ * "El usuario xxx, es admin"
+ */
+function auth(req, res, next) {
+	if (req.body) {
+		let { name, admin } = req.body;
 
- function auth(req, res,next) {
+		if (admin) res.send(`El usuario ${name}, es admin`);
+		else res.status(300).send("Error Auth");
+	}
 	
-	next()
+	next();
 };
 
-module.exports = {user,auth}
+module.exports = { user, auth }

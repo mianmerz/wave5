@@ -39,7 +39,7 @@ afterEach(() => {
 	productsDB = productBackup;
 });
 
-xdescribe("DELETE", () => {
+describe("DELETE", () => {
 	it("Debería ser un metodo DELETE a '/product/:id'", async () => {
 		expect(deleteResponse.req.method).toBe("DELETE");
 		expect(deleteResponse.res.statusCode).toBe(200);
@@ -66,7 +66,7 @@ xdescribe("DELETE", () => {
 	});
 });
 
-xdescribe("GET", () => {
+describe("GET", () => {
 	it("La ruta /product debería mostar el array de objetos", () => {
 		expect(getResponseProduct.body.length).toBe(2);
 		expect(typeof getResponseProduct.body).toBe("object");
@@ -85,7 +85,7 @@ xdescribe("GET", () => {
 	});
 });
 
-xdescribe("POST", () => {
+describe("POST", () => {
 	it("/product debería poder agregar un producto", async () => {
 		const RouteProducts = await api.get("/api/product");
 		const contents = RouteProducts.body.map((pdct) => pdct.name);
@@ -99,9 +99,9 @@ xdescribe("POST", () => {
 	});
 });
 
-xdescribe("PUT", () => {
+describe("PUT", () => {
 	it("/product/:id debería poder actualizar el nombre de un producto", () => {
-		let brandName = putResponse.body.brandsDB.filter(
+		let brandName = productsDB.filter(
 			(brnd) => brnd.name === replaceBrand.name
 		);
 		expect(brandName).toBeDefined();
@@ -137,32 +137,32 @@ describe("GET",()=>{
 	})
 })
 
-describe("POST",()=>{
-	it("/product debería poder agregar un producto",async()=>{
+// describe("POST",()=>{
+// 	it("/product debería poder agregar un producto",async()=>{
 		
-		const RouteProducts = await api.get("/api/product");
-		const contents = RouteProducts.body.map((pdct) => pdct.name);
-		expect(contents).toContain(newProduct.name);
-	})
+// 		const RouteProducts = await api.get("/api/product");
+// 		const contents = RouteProducts.body.map((pdct) => pdct.name);
+// 		expect(contents).toContain(newProduct.name);
+// 	})
 
-		it("/product cuando agrega un producto, devuelve un objeto con los atributos 'message' y 'brand'", async () => {
-			expect(postResponse.body).toBeInstanceOf(Object)
-			expect(postResponse.body).toHaveProperty('message')
-			expect(postResponse.body).toHaveProperty('brand')
-		});
-})
+// 		it("/product cuando agrega un producto, devuelve un objeto con los atributos 'message' y 'brand'", async () => {
+// 			expect(postResponse.body).toBeInstanceOf(Object)
+// 			expect(postResponse.body).toHaveProperty('message')
+// 			expect(postResponse.body).toHaveProperty('brand')
+// 		});
+// })
 
-describe("PUT",()=>{
-	it("/product/:id debería poder actualizar el nombre de un producto", () => {
-		let brandName = putResponse.body.brandsDB.filter(
-			(brnd) => brnd.name === replaceBrand.name
-		); 
-		expect(brandName).toBeDefined();
-		expect(putResponse.res.statusCode).toBe(200);
-		expect(putResponse.req.method).toBe("PUT");
-	});
-	it("Si la modificacion se hizo correctamente, debria devolver un objeto con el atributo 'message: Producto Actualizado'",()=>{
-		expect(putResponse.body.message).toMatch(/producto actualizado/i);
-		expect(putResponse.res.statusCode).toBe(200);
-	})
-})
+// xdescribe("PUT",()=>{
+// 	it("/product/:id debería poder actualizar el nombre de un producto", () => {
+// 		let brandName = putResponse.body.brandsDB.filter(
+// 			(brnd) => brnd.name === replaceBrand.name
+// 		); 
+// 		expect(brandName).toBeDefined();
+// 		expect(putResponse.res.statusCode).toBe(200);
+// 		expect(putResponse.req.method).toBe("PUT");
+// 	});
+// 	it("Si la modificacion se hizo correctamente, debria devolver un objeto con el atributo 'message: Producto Actualizado'",()=>{
+// 		expect(putResponse.body.message).toMatch(/producto actualizado/i);
+// 		expect(putResponse.res.statusCode).toBe(200);
+// 	})
+// })
