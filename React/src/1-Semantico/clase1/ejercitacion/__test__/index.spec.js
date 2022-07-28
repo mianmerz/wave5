@@ -5,7 +5,7 @@ require("@testing-library/jest-dom/extend-expect");
 
 beforeEach(() => render(<Home />));
 
-xdescribe("PUNTO 1", () => {
+describe("PUNTO 1", () => {
 	it("Debería existir una etiqueta 'nav'", () => {
 		expect(screen.getByRole("navigation")).toBeInTheDocument();
 	});
@@ -19,7 +19,7 @@ xdescribe("PUNTO 1", () => {
 	});
 });
 
-xdescribe("PUNTO 2", () => {
+describe("PUNTO 2", () => {
 	it("Debería existir la etiqueta 'section' con el role 'section' ", () => {
 		let sectionTag = screen.getByRole("section");
 		expect(sectionTag).toBeInTheDocument();
@@ -38,7 +38,7 @@ xdescribe("PUNTO 2", () => {
 		expect(sectionTag).toBeInTheDocument();
 	});
 });
-xdescribe('PUNTO 3',()=>{
+describe('PUNTO 3',()=>{
 	it("Debería existir la etiqueta 'footer'", () => {
 		let sectionTag = screen.getByRole("contentinfo");
 		expect(sectionTag).toBeInTheDocument();

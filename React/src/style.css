@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+padding: 0 50px;
+    font-family: 'Roboto', sans-serif;
+    background: white;
+    color: #212529;
+}
+
+.menu {
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #e1e6eb;
+}
+
+.menu a {
+    color: #212529;
+    text-decoration: none;
+    font-size: 15px;
+    padding: 15px;
+    cursor: pointer;
+    transition: all .3s;
+    text-align: center;
+    /* border: 1px solid orange; */
+    font-weight: 500;
+}
+
+.menu a:hover {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.profile {
+    text-align: center;
+}
+
+.profile article .top{
+    display: flex;
+    justify-content: center;
+}
+
+.profile .avatar {
+    border-radius: 500px;
+    overflow: hidden;
+    max-width: 200px;
+    max-height: 200px;
+    
+}
+
+.profile .avatar img{
+    width: 100%;
+    object-fit: cover;
+}
+
+.profile .bottom{
+    width: 100%;
+   display: flex;
+   justify-content: center;
+}
+
+.profile .description {
+    font-size: 14px;
+    font-weight: 300;
+    color: #616971;
+    line-height: 20px;
+    max-width: 500px;
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid #e1e6eb;
+}
+
+footer a{
+    color: #212529;
+    text-decoration: none;
+}
